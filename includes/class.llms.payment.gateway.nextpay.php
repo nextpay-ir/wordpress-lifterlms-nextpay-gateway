@@ -93,7 +93,7 @@ class LLMS_Payment_Gateway_Nextpay extends LLMS_Payment_Gateway {
 
 		$result = $result->PaymentVerificationResult;
 
-		if ($result->code != 0) {
+		if ($result->code == 0) {
 				$txn_data = array();
 				$txn_data['amount'] = $order->get_price( 'total', array(), 'float' );
 				$txn_data['transaction_id'] = $trans_id;
